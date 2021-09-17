@@ -91,7 +91,7 @@ public class OrderControllerTest {
 		
 		Mockito.when(orderServiceImpl.processOrder(Mockito.anyList())).thenReturn(orderSummary);
 
-		this.mockMvc.perform(get("/orders/submit").contentType(MediaType.APPLICATION_JSON).content(jsonBody)).andDo(print())
+		this.mockMvc.perform(post("/orders/submit").contentType(MediaType.APPLICATION_JSON).content(jsonBody)).andDo(print())
 				.andExpect(status().isOk()).andReturn();
 
 	}
